@@ -1,0 +1,26 @@
+.container {
+    background-color: white;
+    display: grid;
+    grid-template-rows: repeat(5, 75px);
+    width: fit-content;
+    margin: 0 auto;
+  }
+  
+  .letter-div {
+    display: grid;
+    grid-template-columns: repeat(5, 75px);
+  }
+  
+  .box {
+    border: 2px solid lightgray;
+    margin: 2.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .letter-font {
+    font-weight: bold;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }

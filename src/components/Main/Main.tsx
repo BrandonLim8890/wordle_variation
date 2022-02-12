@@ -5,7 +5,7 @@ import Letter from '../Letter'
 
 const Main = () => {
   const shuffled = WORDS.sort(() => 0.5 - Math.random())
-  // ["game", "hello"] -> [[g,a,n,e], [h,e,l,l,o]]
+  // ["game", "hello"] -> [[g,a,m,e], [h,e,l,l,o]]
   const selected = shuffled.slice(0, 5).map((word) => word.split(''))
 
   const shuffledSelected = shuffled

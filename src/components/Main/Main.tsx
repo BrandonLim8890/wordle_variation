@@ -20,6 +20,11 @@ const Main = () => {
 
   const [ansArr, setGameArr] = useState(selected)
   const [gameArr, setAnsArr] = useState(game)
+  const [swap, setSwap] = useState([])
+
+  const handleSelect = (index: number, j: number) => {
+    const current = {i: index, j};
+  }
 
   return (
     <div className='container'>
@@ -27,7 +32,7 @@ const Main = () => {
         return (
           <div className='letter-div' key={index}>
             {word.map((letter, i) => (
-              <Letter key={i} letter={letter} index={i} word={ansArr[index]} />
+              <Letter key={i} letter={letter} index={i} word={ansArr[index]} j={i} handleSelect={handleSelect} />
             ))}
           </div>
         )

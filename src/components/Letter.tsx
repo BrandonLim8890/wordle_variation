@@ -1,42 +1,48 @@
-import React, { MouseEventHandler, useState } from 'react'
-import './Letter.css'
+import React, { useState } from 'react';
+import './Letter.css';
 
 interface Props {
-  word: string[]
-  index: number
-  letter: string
-  j: number
+  word: { letter: string; selected: boolean }[];
+  row: number;
+  letter: string;
+  col: number;
   handleSelect: (index: number, j: number) => void;
+  selected: boolean;
 }
 
-const Letter = ({ word, index, letter, j, handleSelect }: Props) => {
-
+const Letter = ({ word, col, letter, row, handleSelect, selected }: Props) => {
   const handleOnClick = (e: React.MouseEvent) => {
-    handleSelect(index, j);
-    setSelected(!selected);
-  }
+    handleSelect(row, col);
+  };
 
-  const [selected, setSelected] = useState(false);
-
-  if (letter === word[index]) {
+  if (letter === word[col].letter) {
     return (
-      <div className={`box green ${selected ? "selected-green" : ""}`} onClick={handleOnClick} >
+      <div
+        className={`box green ${selected ? 'selected-green' : ''}`}
+        onClick={handleOnClick}
+      >
         <p className='letter-font'>{letter}</p>
       </div>
-    )
-  } else if (word.includes(letter)) {
+    );
+  } else if (word.map((element) => element.letter).includes(letter)) {
     return (
-      <div className={`box yellow ${selected ? "selected-yellow" : ""}`} onClick={handleOnClick}>
+      <div
+        className={`box yellow ${selected ? 'selected-yellow' : ''}`}
+        onClick={handleOnClick}
+      >
         <p className='letter-font'>{letter}</p>
       </div>
-    )
+    );
   } else {
     return (
-      <div className={`box ${selected ? "selected" : ""}`} onClick={handleOnClick}>
+      <div
+        className={`box ${selected ? 'selected' : ''}`}
+        onClick={handleOnClick}
+      >
         <p className='letter-font'>{letter}</p>
       </div>
-    )
+    );
   }
-}
+};
 
-export default Letter
+export default Letter;

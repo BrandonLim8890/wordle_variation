@@ -3,6 +3,8 @@ import './Main.css';
 import { WORDS } from '../../data';
 import Letter from '../Letter';
 
+const NUM_OF_WORDS = 5
+
 interface Position {
   row: number;
   col: number;
@@ -10,7 +12,7 @@ interface Position {
 
 const Main = () => {
   const shuffled = WORDS.sort(() => 0.5 - Math.random());
-  const selectedWords = shuffled.slice(0, 1);
+  const selectedWords = shuffled.slice(0, NUM_OF_WORDS);
   const selected = selectedWords.map((word) =>
     word.split('').map((letter) => ({ letter, selected: false }))
   );
@@ -22,7 +24,7 @@ const Main = () => {
     .map((letter) => ({ letter, selected: false }));
 
   let game = [];
-  for (let i = 0; i < 1; i++) {
+  for (let i = 0; i < NUM_OF_WORDS; i++) {
     game.push(shuffledSelected.splice(0, 5));
   }
 

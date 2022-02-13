@@ -6,7 +6,7 @@
 .container {
   background-color: white;
   display: grid;
-  grid-template-rows: repeat(5, 75px);
+  grid-template-rows: repeat(10, 75px);
   width: fit-content;
 }
 

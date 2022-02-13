@@ -25,13 +25,13 @@
 }
 
 .selected {
-  background-color: rgba(128, 128, 128, 0.3);
+  background-color: rgba(194, 194, 194, 0.3);
 }
 
 .selected-yellow {
-  background-color: yellow;
+  background-color: rgb(255, 255, 118);
 }
 
 .selected-green {
-  background-color: green !important;
+  background-color: rgb(94, 238, 94) !important;
 }
